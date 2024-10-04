@@ -10,7 +10,7 @@ const findUser = async (userId) => {
   return users.find((user) => user.id === userId);
 };
 const findEvent = async (eventId) => {
-  //Igual que userfind
+  return events.find((event) => event.id === eventId);
 };
 
 //* Gabo de esta forma envias por parametros
