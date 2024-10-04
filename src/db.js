@@ -1,11 +1,10 @@
-import AWS from 'aws-sdk';
-//Importo mis credenciales desde mi archivo de configuracion
-import { region, accessKeyId, secretAccessKey } from './config.js';
+import { Pool } from 'pg';
+import { RAILWAY_CONNECTION_URL } from './config.js';
 
-AWS.config.update({
-  region: region,
-  accessKeyId: accessKeyId,
-  secretAccessKey: secretAccessKey,
+// The secret connection string you copied earlier
+const connectionString = RAILWAY_CONNECTION_URL;
+const pool = new Pool({
+  connectionString,
 });
 
-export default AWS;
+export default pool;
