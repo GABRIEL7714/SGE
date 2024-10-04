@@ -1,6 +1,5 @@
 /* Librerias propias de Node */
 import express from 'express';
-import multer from 'multer';
 import cors from 'cors';
 
 /* Fin Librerias propias de Node */

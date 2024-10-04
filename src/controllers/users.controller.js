@@ -1,4 +1,6 @@
 export const getAllUsers = async (req, res) => {
-  const users = ['walter', 'gabriel'];
-  return res.json(users);
+  //MOCK DB
+  const users = ['walter', 'gabriel', 'KAREN'];
+
+  return res.send(users);
 };
