@@ -21,7 +21,15 @@ export const registerToEvent = async (req, res) => {
   const user = await findUser(userId);
   const event = await findEvent(eventId);
 
-  await createInvoice();
-  const message = 'Usted ha sigo registrado para el evento: ' + event;
+  const invoiceMessage = await createInvoice();
+
+  const message =
+    'Usted ha sigo registrado para el evento: ' +
+    event.eventName +
+    ' --- ' +
+    user.email +
+    '--' +
+    invoiceMessage;
+
   return res.json(message);
 };
