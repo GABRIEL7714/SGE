@@ -28,8 +28,15 @@ export const registerToEvent = async (req, res) => {
     event.eventName +
     ' --- ' +
     user.email +
-    '--' +
+    '---->' +
     invoiceMessage;
 
   return res.json(message);
+};
+
+//* Gabo de esta forma envias por el cuerpo (body)
+// en insomnia pones entre llaves { email: " de email", password: "de password"}
+export const envioBody = async (req, res) => {
+  const { email, pass } = req.body;
+  return res.json(email);
 };
