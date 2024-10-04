@@ -10,6 +10,8 @@ setTZ('America/Lima');
 
 /* Importando las rutas creadas */
 import usersRoutes from './routes/users.routes.js';
+import inscriptionsRoutes from './routes/inscriptions.routes.js';
+
 /* Fin Importando rutas creadas */
 
 const app = express();
@@ -42,5 +44,6 @@ app.set('Access-Control-Allow-Origin', '*');
 
 /*  Se le indica al servidor que quiero utilizar  todas las rutas que contiene el archivo */
 app.use(usersRoutes);
+app.use(inscriptionsRoutes);
 
 export default app;
