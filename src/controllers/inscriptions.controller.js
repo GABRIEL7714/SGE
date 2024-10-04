@@ -15,13 +15,13 @@ const findEvent = async (eventId) => {
 
 //* Gabo de esta forma envias por parametros
 export const registerToEvent = async (req, res) => {
-  const userId = req.params.userId;
-  const eventId = req.params.eventId;
+  const userId = parseInt(req.params.userId);
+  const eventId = parseInt(req.params.eventId);
 
   const user = await findUser(userId);
-  console.log(user);
+  const event = await findEvent(eventId);
 
   await createInvoice();
-  const message = 'Usted ha sigo registrado para el evento';
+  const message = 'Usted ha sigo registrado para el evento: ' + event;
   return res.json(message);
 };
