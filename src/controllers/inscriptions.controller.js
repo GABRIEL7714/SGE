@@ -35,7 +35,7 @@ export const registerToEvent = async (req, res) => {
 };
 
 //* Gabo de esta forma envias por el cuerpo (body)
-// en insomnia pones entre llaves { email: " de email", password: "de password"}
+// en insomnia pones primero pones POST y luego entre llaves { email: " de email", password: "de password"}
 export const envioBody = async (req, res) => {
   const { email, pass } = req.body;
   return res.json(email);

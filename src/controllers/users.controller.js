@@ -1,9 +1,8 @@
 import pool from '../db.js';
 
 export const getAllUsers = async (req, res) => {
-  //MOCK DB
-  const users = ['walter', 'gabriel', 'KAREN'];
-  // const posts = await pool.query('SELECT email FROM user;');
+  //Connect to database
+  const posts = await pool.query('SELECT * FROM usuario;');
 
-  return res.json(users);
+  return res.json(posts);
 };
